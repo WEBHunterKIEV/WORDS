@@ -1,8 +1,49 @@
 .container {
     display: flex;
     flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    height: 90vh;
+}
+h1 {
+    flex-basis: 10vh;
+}
+.out_display {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex-basis: 20vh;
+    width: 70vw;
+}
+.task_img img {
+    width: 10vmax;
+}
+.input_word {
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
+}
+.input_word p {
+    font-size: 4vmax;
+}
+.keyboard {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.keyboard p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    width: 4.1vw;
+    padding: .5vw;
+    margin: .3vw;
+    font-size: 2vmax;
+    cursor: pointer;
+}
+.keyboard p:hover {
+    color: azure;
+    background: blue;
 }
