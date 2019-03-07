@@ -8,7 +8,12 @@ $(document).ready(function () {
 	var rand = Math.random() * temp.length;
 	rand = Math.floor(rand);
 
-	var randA = temp[rand];
+	temp[rand] = "_";
+
+	temp = temp.join('');
+
+	$('#word').text(temp)
+
 
 
 	
