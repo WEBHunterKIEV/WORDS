@@ -47,3 +47,17 @@ h1 {
     color: azure;
     background: blue;
 }
+.confirm {
+    display: none;
+}
+.confirm_show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20vh;
+}
+.confirm_show button {
+    height: 5vmax;
+    width: 5vmax;
+}
