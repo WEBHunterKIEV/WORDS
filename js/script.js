@@ -1,18 +1,37 @@
 
 $(document).ready(function () {
 
-	var temp = $('#word').text();
+	var word = $('#word').text();
 
-	temp = temp.split(''); 
+	word = word.split(''); 
 
-	var rand = Math.random() * temp.length;
+	var rand = Math.random() * word.length;
 	rand = Math.floor(rand);
 
-	temp[rand] = "_";
+	randLetter = word[rand];
 
-	temp = temp.join('');
+	word[rand] = "_";
 
-	$('#word').text(temp)
+	word = word.join('');
+
+	$('#word').text(word)
+
+	//---------------------------------
+
+	$('.keyboard').click(function(e) {
+
+		
+
+		//--------------------------------------
+
+		if (e.target.innerText == randLetter) {
+			alert('Yes')
+		} else {
+			alert('no')
+		}
+
+		//console.log(e.target.innerText + " / " + randLetter)
+	})
 
 
 
