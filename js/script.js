@@ -1,6 +1,15 @@
 
 $(document).ready(function () {
 
+    var base = [
+		{"name":"КОТ","img":"images/cat.png"},
+		{"name":"СЛОН","img":"images/elef.png"}
+	]
+
+	$('#imageSrc').attr('src', base[1].img);
+	$('#word').text(base[1].name);
+
+
 	var word = $('#word').text();
 
 	word = word.split(''); 
