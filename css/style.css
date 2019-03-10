@@ -69,9 +69,24 @@ h1 {
 
 #history {
     position: absolute;
-    right: 10vw;
-    height: 100vh;
+    right: 0;
+    height: 100%;
+    background-color: wheat;
+    padding: 1vmax;
 }
+#history h2 {
+    margin-top: 5vmax;
+}
+.history_open {
+    width: 5vw;
+}
+.history_open p {
+    display: none;
+}
+.history_open h2 {
+    transform: rotate(-90deg);
+}
+
 
 /*--------------------------------------*/
 

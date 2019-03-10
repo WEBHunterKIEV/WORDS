@@ -116,6 +116,14 @@ $(document).ready(function () {
       location.reload();
 		})
 
+		//--------------------------------- toggle history class
+		$('#history').click(function(){
+			$('#history').toggleClass('history_open');
+		})
+		
+		
+		
+
 	
 
 	
