@@ -6,8 +6,17 @@
     width: 90vw;
     height: 90vh;
 }
-h1 {
-    flex-basis: 10vh;
+#head_text span {
+    margin: 2vmax;
+}
+#blue_span {
+    color: blue;
+}
+#green_span {
+    color: green;
+}
+#red_span {
+    color: red;
 }
 .out_display {
     display: flex;

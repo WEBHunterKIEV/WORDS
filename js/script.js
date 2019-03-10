@@ -18,15 +18,32 @@ $(document).ready(function () {
 		$('#history_log p').eq(historyCount).text(window.localStorage['answer' + historyCount]);
 		
 	}
-	
 
+	
+	//--------------------------------- head text
+
+	var totalCounter = window.localStorage.totalCounter;
+	if (totalCounter == undefined) totalCounter = 0;
+	var correctCounter = window.localStorage.correctCounter;
+	if (correctCounter == undefined) correctCounter = 0;
+	var incorrectCounter = window.localStorage.incorrectCounter;
+	if (incorrectCounter == undefined) incorrectCounter = 0;
+
+		$('#blue_span').text('СЛОВ ЗА СЕГОДНЯ: ' + totalCounter);
+		$('#green_span').text('ПРАВИЛЬНО: ' + correctCounter);
+		$('#red_span').text('НЕ ПРАВИЛЬНО: ' + incorrectCounter);
+		
+		
+	
+	//--------------------------------- random generator
+    
 	var randTask = Math.random() * base.length;
 	randTask = Math.floor(randTask);
 
 	$('#imageSrc').attr('src', base[randTask].img);
 	$('#word').text(base[randTask].name);
 
-  //-----------------------------------
+    //---------------------------------
 
 	var word = $('#word').text();
 
@@ -100,7 +117,7 @@ $(document).ready(function () {
 
 					var answerNom = 'answer' + window.localStorage.counter;
 
-					window.localStorage[answerNom] = d + $('#word').text();
+					window.localStorage[answerNom] = d + "  >>  " + $('#word').text() + " // " + base[randTask].name;
 				
 
 					}
@@ -120,9 +137,6 @@ $(document).ready(function () {
 		$('#history').click(function(){
 			$('#history').toggleClass('history_open');
 		})
-		
-		
-		
 
 	
 
