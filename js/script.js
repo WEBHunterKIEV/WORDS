@@ -11,6 +11,8 @@ $(document).ready(function () {
 		{"name":"ВОЛК","img":"images/woolf.png"}
 	]
 
+	$('#history_log').text(window.localStorage.wrongAnswer);
+
 	var randTask = Math.random() * base.length;
 	randTask = Math.floor(randTask);
 
@@ -79,6 +81,19 @@ $(document).ready(function () {
 					} else {
 					$(".answer_incorrect").addClass('flex_show');
 					$("#right_answer").text(base[randTask].name);
+
+					var d = new Date();
+					d.toLocaleString();
+
+					if (window.localStorage.counter != undefined) {
+						window.localStorage.counter++;
+					} else {
+						window.localStorage.counter = 0;
+					}
+					
+					window.localStorage.wrongAnswer[] = d + $('#word').text();
+					$('#history_log').text(window.localStorage.wrongAnswer[]);
+
 					}
 					}
 
