@@ -11,7 +11,14 @@ $(document).ready(function () {
 		{"name":"ВОЛК","img":"images/woolf.png"}
 	]
 
-	$('#history_log').text(window.localStorage.wrongAnswer);
+	//--------------------------------- init history log
+
+	for (historyCount = 0;window.localStorage['answer' + historyCount] != undefined;historyCount++) {
+		$('#history_log').append('<p>');
+		$('#history_log p').eq(historyCount).text(window.localStorage['answer' + historyCount]);
+		
+	}
+	
 
 	var randTask = Math.random() * base.length;
 	randTask = Math.floor(randTask);
@@ -90,9 +97,11 @@ $(document).ready(function () {
 					} else {
 						window.localStorage.counter = 0;
 					}
-					
-					window.localStorage.wrongAnswer[] = d + $('#word').text();
-					$('#history_log').text(window.localStorage.wrongAnswer[]);
+
+					var answerNom = 'answer' + window.localStorage.counter;
+
+					window.localStorage[answerNom] = d + $('#word').text();
+				
 
 					}
 					}
