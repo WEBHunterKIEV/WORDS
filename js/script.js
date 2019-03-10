@@ -1,22 +1,23 @@
 
 $(document).ready(function () {
 
-    var base = [
+  var base = [
 		{"name":"КОТ","img":"images/cat.png"},
-		{"name":"СЛОН","img":"images/elef.png"}
-		{"name":"ЗАЯЦ","img":"images/banny.png"}
-		{"name":"МЕДВЕДЬ","img":"images/bear.png"}
-		{"name":"БЕГЕМОТ","img":"images/hippo.png"}
-		{"name":"ТИГР","img":"images/tiger.png"}
+		{"name":"СЛОН","img":"images/elef.png"},
+		{"name":"ЗАЯЦ","img":"images/banny.png"},
+		{"name":"МЕДВЕДЬ","img":"images/bear.png"},
+		{"name":"БЕГЕМОТ","img":"images/hippo.png"},
+		{"name":"ТИГР","img":"images/tiger.png"},
 		{"name":"ВОЛК","img":"images/woolf.png"}
 	]
 
-	  var randTask = Math.random() * base.length;
-	  randTask = Math.floor(randTask);
+	var randTask = Math.random() * base.length;
+	randTask = Math.floor(randTask);
 
 	$('#imageSrc').attr('src', base[randTask].img);
 	$('#word').text(base[randTask].name);
 
+  //-----------------------------------
 
 	var word = $('#word').text();
 
@@ -35,12 +36,13 @@ $(document).ready(function () {
 
 	$('#word').text(word)
 
-	//---------------------------------
+	//----------------------------------------
 
 	$('.keyboard').click(function(e) {
 
 		$('.keyboard').fadeTo("slow", 0.1)
 		$('.confirm').addClass('confirm_show')
+		$('#word').css('font-size','8vmax')
 
 		word = word.split(''); 
 		
@@ -51,22 +53,49 @@ $(document).ready(function () {
 		word = word.join('');
 		$('#word').text(word)
 
-		//--------------------------------------
 
-		if (e.target.innerText == randLetter) {
-			//alert('Yes')
-		} else {
-			//alert('no')
-		}
 
-		console.log(word)
-		//console.log(e.target.innerText + " / " + randLetter)
+
+		
 	})
 
+		//-------------------------------------
+		
+		$('.confirm').click(function(e) {
 
+			if (e.target.innerText == "НЕТ") {
+				word = word.split(''); 
+				word[rand] = "_";
+	      word = word.join('');
+				$('#word').text(word)
+				
+				$('.keyboard').fadeTo("slow", 1)
+				$('.confirm').removeClass('confirm_show')
+				$('#word').css('font-size','4vmax')
+
+			} else {
+				if (word[rand] == randLetter) {
+					$(".answer_correct").addClass('flex_show');
+					} else {
+					$(".answer_incorrect").addClass('flex_show');
+					$("#right_answer").text(base[randTask].name);
+					}
+					}
+
+		  //--------------------------------------
+
+		  
+		})
+
+
+		$('.reload').click(function() {
+      location.reload();
+		})
 
 	
 
 	
 })
+
+
 
