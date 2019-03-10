@@ -4,10 +4,18 @@ $(document).ready(function () {
     var base = [
 		{"name":"КОТ","img":"images/cat.png"},
 		{"name":"СЛОН","img":"images/elef.png"}
+		{"name":"ЗАЯЦ","img":"images/banny.png"}
+		{"name":"МЕДВЕДЬ","img":"images/bear.png"}
+		{"name":"БЕГЕМОТ","img":"images/hippo.png"}
+		{"name":"ТИГР","img":"images/tiger.png"}
+		{"name":"ВОЛК","img":"images/woolf.png"}
 	]
 
-	$('#imageSrc').attr('src', base[1].img);
-	$('#word').text(base[1].name);
+	  var randTask = Math.random() * base.length;
+	  randTask = Math.floor(randTask);
+
+	$('#imageSrc').attr('src', base[randTask].img);
+	$('#word').text(base[randTask].name);
 
 
 	var word = $('#word').text();
@@ -16,6 +24,8 @@ $(document).ready(function () {
 
 	var rand = Math.random() * word.length;
 	rand = Math.floor(rand);
+
+	
 
 	randLetter = word[rand];
 
